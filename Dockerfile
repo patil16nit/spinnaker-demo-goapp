@@ -1,0 +1,6 @@
+FROM golang:stretch
+WORKDIR /go/src/app 
+ADD ./app /go/src/app
+RUN go get -d -v ./...
+RUN go install -v ./...
+CMD ["app"]
